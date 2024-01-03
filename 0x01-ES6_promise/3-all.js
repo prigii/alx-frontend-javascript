@@ -11,7 +11,7 @@ export default function handleProfileSignup() {
 
   // Use Promise.all to collectively resolve all promises
   Promise.all([userPromise, photoPromise])
-    .then(([user, photo]) => {
+    .then(([user]) => {
       // Destructure the results and log the required information
       console.log(`Body: ${user.firstName} ${user.lastName}`);
     })
