@@ -1,25 +1,25 @@
 #!/usr/bin/env node
-import { uploadPhoto, createUser } from './utils';
+import { uploadPhoto, createUser } from "./utils";
 
 async function asyncUploadUser() {
-    try {
+  try {
     // Use Promise.all to concurrently execute uploadPhoto and createUser
     const [photoResponse, userResponse] = await Promise.all([
-        uploadPhoto(),
-        createUser(),
+      uploadPhoto(),
+      createUser(),
     ]);
 
     // Return an object with the responses
     return {
-        photo: photoResponse,
-        user: userResponse,
+      photo: photoResponse,
+      user: userResponse,
     };
-    } catch (error) {
+  } catch (error) {
     // Handle errors and return an empty object
-    console.error('Error during async upload and user creation:', error.message);
+    console.error("Error during async upload and user creation:", error.message);
     return {
-        photo: null,
-        user: null,
+      photo: null,
+      user: null,
     };
-    }
+  }
 }
