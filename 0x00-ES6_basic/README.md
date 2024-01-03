@@ -13,3 +13,5 @@
 10. For...of Loops
 11. Iterator
 12. Let's create a report object
+13. Iterating through report objects
+14. Iterate through object
