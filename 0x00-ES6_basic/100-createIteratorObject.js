@@ -30,22 +30,22 @@ export default function createIteratorObject(report) {
  //   export default function createIteratorObject(report) {
    //     let departments = Object.values(report.allEmployees).flat();
         let currentIndex = 0;
-      
+
         return {
-          [Symbol.iterator]() {
+        [Symbol.iterator]() {
             return this;
-          },
-          next() {
+        },
+        next() {
             if (currentIndex < departments.length) {
-              const result = {
+            const result = {
                 value: departments[currentIndex],
                 done: false,
-              };
-              currentIndex++;
-              return result;
+            };
+            currentIndex++;
+            return result;
             } else {
-               return { done: true };
+            return { done: true };
             }
             },
         };
-        }
+
