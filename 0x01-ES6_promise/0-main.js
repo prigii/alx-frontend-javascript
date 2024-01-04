@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-import getResponseFromAPI from "./0-promise";
+import divideFunction from './8-try';
 
-const response = getResponseFromAPI();
-console.log(response instanceof Promise);
+test('divideFunction throw an error', () => {
+  expect(() => {
+    divideFunction(10, 0);
+  }).toThrowError('cannot divide by 0');
+});
