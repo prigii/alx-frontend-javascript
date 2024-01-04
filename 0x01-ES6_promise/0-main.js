@@ -1,8 +1,5 @@
-#!/usr/bin/env node
+import guardrail from './9-try';
 import divideFunction from './8-try';
 
-test('divideFunction throw an error', () => {
-  expect(() => {
-    divideFunction(10, 0);
-  }).toThrowError('cannot divide by 0');
-});
+console.log(guardrail(() => divideFunction(10, 2)));
+console.log(guardrail(() => divideFunction(10, 0)));
