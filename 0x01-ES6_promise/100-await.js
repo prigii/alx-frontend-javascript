@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { uploadPhoto, createUser } from "./utils";
+import { uploadPhoto, createUser } from './utils';
 
 async function asyncUploadUser() {
   try {
@@ -16,7 +16,7 @@ async function asyncUploadUser() {
     };
   } catch (error) {
     // Handle errors and return an empty object
-    console.error("Error during async upload and user creation:", error.message);
+    console.error('Error during async upload and user creation:', error.message);
     return {
       photo: null,
       user: null,
