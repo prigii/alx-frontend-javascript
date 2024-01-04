@@ -6,7 +6,7 @@ export default function loadBalancer(chinaDownload, USDownload) {
     // Return the value of the first resolved promise
     .catch((error) => {
       // Handle any unexpected errors during the process
-      console.error("Error in load balancer:", error.message);
+      console.error('Error in load balancer:', error.message);
       throw error; // Re-throw the error to propagate it further if needed
     });
 }

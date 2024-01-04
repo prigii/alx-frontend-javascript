@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Assuming the functions are exported from utils.js
-const { uploadPhoto, createUser } = require("./utils");
+const { uploadPhoto, createUser } = require('./utils');
 
 export default function handleProfileSignup() {
   // Create a user first
@@ -17,6 +17,6 @@ export default function handleProfileSignup() {
     })
     .catch((error) => {
       // Log an error message in case of any error
-      console.error("Signup system offline:", error.message);
+      console.error('Signup system offline:', error.message);
     });
 }

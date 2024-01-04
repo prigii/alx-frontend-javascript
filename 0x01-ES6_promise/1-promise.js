@@ -4,9 +4,9 @@ export default function getFullResponseFromAPI(success) {
     // Simulating an asynchronous API call, for example purposes
     setTimeout(() => {
       if (success) {
-        resolve({ status: 200, body: "Success" });
+        resolve({ status: 200, body: 'Success' });
       } else {
-        reject(new Error("The fake API is not working currently"));
+        reject(new Error('The fake API is not working currently'));
       }
     }, 1000); // Simulating a 1-second delay
   });
