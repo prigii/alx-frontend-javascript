@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 export default function createEmployeesObject (departmentName, employees) {
-  const employeesObject = {
-    [departmentName]: [...employees]
-  };
-
-  return employeesObject;
+  return {
+      [departmentName]: [...employees]
+    };
 }
