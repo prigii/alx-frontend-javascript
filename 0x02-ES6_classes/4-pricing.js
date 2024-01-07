@@ -1,54 +1,39 @@
-// 3-currency.js
-// Assume this is the implementation of the Currency class as described in the previous response
-// ...
-
-// Pricing.js
-import Currency from './3-currency.js';
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
-    this._setAmount(amount);
-    this._setCurrency(currency);
+    this._amount = amount;
+    this._currency = currency;
   }
 
-  // Getter and Setter for amount attribute
-  _getAmount() {
+  // Getter and Setter for amount
+  get amount() {
     return this._amount;
   }
 
-  _setAmount(amount) {
-    if (typeof amount === 'number') {
-      this._amount = amount;
-    } else {
-      throw new TypeError('Amount must be a number');
+  set amount(value) {
+    if (typeof value !== 'number') {
+      throw new Error('TypeError: Amount must be a number');
     }
+    this._amount = value;
   }
 
-  // Getter and Setter for currency attribute
-  _getCurrency() {
+  // Getter and setter for currency
+  get currency() {
     return this._currency;
   }
 
-  _setCurrency(currency) {
-    if (currency instanceof Currency) {
-      this._currency = currency;
-    } else {
-      throw new TypeError('Currency must be an instance of Currency');
-    }
+  set currency(value) {
+    this._currency = value;
   }
 
-  // Method to display full price information
+  // Method
   displayFullPrice() {
-    const { _amount, _currency } = this;
-    return `${_amount} ${_currency._getName()} (${_currency._getCode()})`;
+    return `${this._amount} ${new Currency(this._currency.code, this._currency.name).displayFullCurrency()}`;
   }
 
-  // Static method to convert price based on a conversion rate
+  // Static Method
   static convertPrice(amount, conversionRate) {
-    if (typeof amount === 'number' && typeof conversionRate === 'number') {
-      return amount * conversionRate;
-    } else {
-      throw new TypeError('Amount and conversionRate must be numbers');
-    }
+    return amount * conversionRate;
   }
 }
