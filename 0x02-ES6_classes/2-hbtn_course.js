@@ -1,46 +1,48 @@
 export default class HolbertonCourse {
-    constructor(name, length, students) {
-      this._setName(name);
-      this._setLength(length);
-      this._setStudents(students);
+  constructor(name, length, students) {
+    if (typeof name !== 'string' || typeof length !== 'number' || !Array.isArray(students)) {
+      throw new Error('Invalid attribute type');
     }
-  
-    // Getter and Setter for name attribute
-    _getName() {
-      return this._name;
-    }
-  
-    _setName(name) {
-      if (typeof name === 'string') {
-        this._name = name;
-      } else {
-        throw new TypeError('Name must be a string');
-      }
-    }
-  
-    // Getter and Setter for length attribute
-    _getLength() {
-      return this._length;
-    }
-  
-    _setLength(length) {
-      if (typeof length === 'number') {
-        this._length = length;
-      } else {
-        throw new TypeError('Length must be a number');
-      }
-    }
-  
-    // Getter and Setter for students attribute
-    _getStudents() {
-      return this._students;
-    }
-  
-    _setStudents(students) {
-      if (Array.isArray(students) && students.every(student => typeof student === 'string')) {
-        this._students = students;
-      } else {
-        throw new TypeError('Students must be an array of strings');
-      }
-    }
+
+    // private attributes
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
+
+  // Getter and setter for name
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new Error('Name must be a string');
+    }
+    this._name = value;
+  }
+
+  // Getter and setter for length
+  get length() {
+    return this._length;
+  }
+
+  set length(value) {
+    if (typeof value !== 'number') {
+      throw new Error('Length must be a number');
+    }
+    this._length = value;
+  }
+
+  // Getter and setter for students
+  get students() {
+    return this._students;
+  }
+
+  set students(value) {
+    if (!Array.isArray(value)) {
+      throw new Error('Students must be an array');
+    }
+    this._students = value;
+  }
+}
