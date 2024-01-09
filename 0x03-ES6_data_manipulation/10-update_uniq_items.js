@@ -13,4 +13,3 @@ export default function updateUniqueItems(groceriesMap) {
 
   return groceriesMap;
 }
-
