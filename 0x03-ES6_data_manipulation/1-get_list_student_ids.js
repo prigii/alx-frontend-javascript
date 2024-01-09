@@ -7,4 +7,3 @@ export default function getListStudentIds(students) {
   // Use map to extract the ids
   return students.map(student => student.id);
 }
-
