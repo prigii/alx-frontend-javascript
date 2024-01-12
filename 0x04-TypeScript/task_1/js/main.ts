@@ -42,3 +42,33 @@ const printTeacher: PrintTeacherFunction = (firstName, lastName) => {
   const fullLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
   return `${firstInitial}. ${fullLastName}`;
 };
+
+// task_1/main.ts
+
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+  private firstName: string;
+  private lastName: string;
+
+  constructor({ firstName, lastName }: StudentInterface) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
